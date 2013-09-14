@@ -1,7 +1,7 @@
 {% include custom/navigation.html %}
 <ul class="nav pull-right">
     {% if site.github_user %}
-    <li><a href="http://github.com/{{ site.github_user }}" title="Github Profile"><i class="icon-github-sign social-navbar"></i></a></li>
+    <li><a href="http://github.com/{{ site.github_user }}" title="Github Profile"><i class="icon-github social-navbar"></i></a></li>
     {% endif %}
     {% if site.linkedin_user %}
     <li><a href="http://linkedin.com/in/{{ site.linkedin_user }}" title="Linkedin Profile"><i class="icon-linkedin-sign social-navbar"></i></a></li>
@@ -18,4 +18,5 @@
     {% if site.email %}
     <li><a href="mailto:{{ site.email }}" title="Email"><i class="icon-envelope-alt social-navbar"></i></a></li>
     {% endif %}
+    <li><a href="/atom.xml" title="RSS"><i class="icon-rss social-navbar"></i></a></li>
 </ul>

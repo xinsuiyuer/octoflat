@@ -1,0 +1,33 @@
+---
+layout: page
+footer: false
+---
+
+<div id="blog-archives" class="category">
+    {% assign keys = site.categories.keys %}
+    {{ keys }}
+    {% for category in site.categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <h1> &gt; {{ category_name }} ({{ category[1].size }})</h1>
+        {% assign new_post = true %}
+
+        {% for post in site.categories[category_name] %}
+
+            {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+            <div class="row-fluid">
+                <div class="span1">
+                    {% if year != this_year or new_post == true %}
+                        {% assign year = this_year %}
+                        <h2>{{ year }}</h2>
+                    {% endif %}
+                </div>
+                <div class="span11">
+                    <article>
+                        {% include archive_post.html %}
+                    </article>
+                </div>
+            </div>endunless 
+            {% assign new_post = false %}
+        {% endfor %}
+    {% endfor %}
+</div>
